@@ -166,11 +166,12 @@ void freePGM(struct _PGM *pgm)
     free(pgm);
 }
 
-PGM_t* newPGM(const char* name, size_t width, size_t height)
+PGM_t* newPGM(const char* name, size_t width, size_t height, unsigned maxPixels)
 {
     PGM_t *pgm = malloc(sizeof(struct _PGM));
     pgm->width = width;
     pgm->height = height;
+    pgm->maxPixels = maxPixels;
     pgm->size = height * (width / 8ULL + 1);
     pgm->name = name;
     pgm->write = &writePGM;

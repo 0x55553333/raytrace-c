@@ -93,5 +93,5 @@ struct _PGM {
     /* User-defined flag for enabling debugging via stdio */
     int printDebug;
 };typedef struct _PGM PGM_t;
-PGM_t* newPGM(const char* name, size_t width, size_t height);
+PGM_t* newPGM(const char* name, size_t width, size_t height, unsigned maxPixels);
 #endif //RAYTRACE_C_PGM_H
