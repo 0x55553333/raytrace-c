@@ -1,3 +1,8 @@
+/*
+ * pgm.h / pgm.c - rjf's tiny pgm parser
+ * copyright (c) rui-jie fang 2019.
+ */
+
 #include "pgm.h"
 #include <stdio.h>
 #include <stdlib.h>

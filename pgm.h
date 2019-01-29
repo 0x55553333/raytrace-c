@@ -1,3 +1,8 @@
+/*
+ * pgm.h / pgm.c - rjf's tiny pgm parser
+ * copyright (c) rui-jie fang 2019.
+ */
+
 #ifndef RAYTRACE_C_PGM_H
 #define RAYTRACE_C_PGM_H
 #include <stdlib.h>
