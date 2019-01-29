@@ -90,7 +90,8 @@ void readPGM(struct _PGM *pgm, FILE *file)
             case 0: {
                 if (buf[idx] != 'P' || buf[idx+1] != '2') {
                     buf[idx+2] = '\0';
-                    printf("err: %s is not a good format\n", buf);
+                    if (pgm->printDebug)
+                        printf("err: %s is not a good format\n", buf);
                     free(buf); buf = NULL;
                     return;
                 }
@@ -102,7 +103,8 @@ void readPGM(struct _PGM *pgm, FILE *file)
             case 1: {
                 pgm->width = strtoul(buf + idx, NULL, 10);
                 if (pgm->width == 0) {
-                    printf("err: %s yielded width = 0\n", buf + idx);
+                    if (pgm->printDebug)
+                        printf("err: %s yielded width = 0\n", buf + idx);
                     free(buf); buf = NULL;
                     return;
                 }
@@ -115,7 +117,8 @@ void readPGM(struct _PGM *pgm, FILE *file)
                     goto next_token;
                 pgm->height = strtoul(buf + idx, NULL, 10);
                 if (pgm->height == 0) {
-                    printf("err: %s yielded height = 0\n", buf);
+                    if (pgm->printDebug)
+                        printf("err: %s yielded height = 0\n", buf);
                     free(buf); buf = NULL; return;
                 }
                 while (isdigit(buf[idx])) ++idx;
